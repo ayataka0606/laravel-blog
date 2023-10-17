@@ -185,4 +185,16 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Admin Login ID/Password
+    |--------------------------------------------------------------------------
+    |
+    */
+    "admin_name" => env("ADMIN_NAME"),
+    "admin_email" => env("ADMIN_EMAIL"),
+    "admin_birth" => env("ADMIN_BIRTH"),
+    "admin_login_id" => env("ADMIN_LOGIN_ID"),
+    "admin_login_password" => env("ADMIN_LOGIN_PASSWORD"),
+
 ];
