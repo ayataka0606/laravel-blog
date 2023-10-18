@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->string("name")->default("匿名");
+            $table->string("name")->default("匿名")->nullable();
             $table->longText("content");
             $table->boolean("published")->default(false);
             $table->foreignId("post_id")->constrained();
