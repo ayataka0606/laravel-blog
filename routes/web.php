@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\User\BlogController;
 use App\Http\Controllers\User\ContactController;
+use App\Http\Controllers\User\TopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,8 @@ use App\Http\Controllers\User\ContactController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//トップ
+Route::get("",[TopController::class,"index"])->name("top.index");
 
 //ログイン関係
 Route::get("admin/login",[AuthenticatedSessionController::class,"create"])->name("admin.login.create")->middleware("guest:admin");
