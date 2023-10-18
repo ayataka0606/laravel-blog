@@ -1,4 +1,6 @@
 <x-admin-layout>
+    <!--セクションタイトル-->
+    <x-section-title>カテゴリ編集</x-section-title>
     <!--エラーメッセージ-->
     <x-message/>
     <form method="POST" class="flex flex-col gap-2 px-2">

@@ -1,4 +1,6 @@
 <x-admin-layout>
+    <!--セクションタイトル-->
+    <x-section-title>カテゴリ新規作成</x-section-title>
     <!--エラーメッセージ-->
     <x-message/>
     <!--カテゴリ作成フォーム-->
