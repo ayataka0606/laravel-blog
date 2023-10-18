@@ -10,7 +10,7 @@
     </author>
     @foreach($posts as $post)
         <entry>
-            <id>{{env("APP_URL")}}/blog/{{$post->id}}</id>
+            <id>{{env("APP_URL")}}/blog/{{$post->slug}}</id>
             <title><![CDATA[{{$post->title}}]]></title>
             <updated>{{$post->updated_at->format(DateTime::ATOM)}}</updated>
             <summary><![CDATA[{{$post->description}}]]></summary>
