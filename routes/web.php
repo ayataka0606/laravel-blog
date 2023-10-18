@@ -10,6 +10,8 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\User\BlogController;
 use App\Http\Controllers\User\ContactController;
 use App\Http\Controllers\User\TopController;
+use App\Http\Controllers\Admin\SitemapController;
+use App\Http\Controllers\Admin\FeedController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +23,14 @@ use App\Http\Controllers\User\TopController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//サイトマップ関係
+Route::get("sitemap.xml",[SitemapController::class,"index"])->name("sitemap.index");
+Route::get("sitemap/posts.xml",[SitemapController::class,"posts"])->name("sitemap.posts");
+
+//フィード関係
+Route::get("feed.atom",[FeedController::class,"index"])->name("feed.index");
+
 //トップ
 Route::get("",[TopController::class,"index"])->name("top.index");
 
