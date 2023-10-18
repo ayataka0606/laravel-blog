@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="text-center text-3xl">
-            <a href="/admin/posts">AYATAKA</a>
+            <a href="/admin/post">AYATAKA</a>
         </div>
     </header>
     <nav>
