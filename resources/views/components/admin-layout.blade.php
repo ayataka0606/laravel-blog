@@ -19,7 +19,6 @@
             <li><a href="/admin/post">投稿一覧</a></li>
             <li><a href="/admin/category">カテゴリ一覧</a></li>
             <li><a href="/admin/tag">タグ一覧</a></li>
-            <li><a href="/admin/comment">コメント一覧</a></li>
             <li><a href="/admin/contact">問い合わせ一覧</a></li>
             <li>
                 <form method="POST">

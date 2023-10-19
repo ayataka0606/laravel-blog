@@ -1,27 +1,13 @@
-{{$post->slug}}
-
-@if ($errors->any())
-    <div>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{$error}}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-@if (session("message"))
-    <div>
-        {{session("message")}}
-    </div>
-@endif
-<form method="POST">
-    @csrf
-    <label>名前</label>
-    <input type="text" name="name" value="{{old("name")}}">
-    <label>コメント内容</label>
-    <textarea name="content" cols="30" rows="10">{{old("content")}}</textarea>
-    <button formaction="">コメントする</button>
-</form>
-@foreach ($comments as $comment)
-    {{$comment->conetnt}}
-@endforeach
+<x-user-layout>
+    <x-slot:description>{{$post->description}}</x-slot:description>
+    <x-slot:keywords>{{$post->keywords}}</x-slot:keywords>
+    <x-slot:title>AYATAKA | {{$post->title}}</x-slot:title>
+    <!--インフォメーション-->
+    <x-message/>
+    <!--記事-->
+    <article class="prose">
+        <h1>{{$post->title}}</h1>
+        <p><time>{{$post->updated_at->format("Y/m/d")}}</time></p>
+        {{$post->content}}
+    </article>
+</x-user-layout>

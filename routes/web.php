@@ -5,11 +5,9 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\TagController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthenticatedSessionController;
-use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\User\BlogController;
 use App\Http\Controllers\User\ContactController;
-use App\Http\Controllers\User\TopController;
 use App\Http\Controllers\Admin\SitemapController;
 use App\Http\Controllers\Admin\FeedController;
 
@@ -31,8 +29,6 @@ Route::get("sitemap/posts.xml",[SitemapController::class,"posts"])->name("sitema
 //フィード関係
 Route::get("feed.atom",[FeedController::class,"index"])->name("feed.index");
 
-//トップ
-Route::get("",[TopController::class,"index"])->name("top.index");
 
 //ログイン関係
 Route::get("admin/login",[AuthenticatedSessionController::class,"create"])->name("admin.login.create")->middleware("guest:admin");
@@ -62,14 +58,8 @@ Route::post("admin/post/store",[PostController::class,"store"])->name("admin.pos
 Route::get("admin/post/{post}/edit",[PostController::class,"edit"])->name("admin.post.edit")->middleware("auth:admin");
 Route::put("admin/post/{post}",[PostController::class,"update"])->name("admin.post.update")->middleware("auth:admin");
 Route::delete("admin/post/{post}",[PostController::class,"destroy"])->name("admin.post.destroy")->middleware("auth:admin");
-Route::get("blog",[BlogController::class,"index"])->name("blog.index");
+Route::get("",[BlogController::class,"index"])->name("blog.index");
 Route::get("blog/{slug}",[BlogController::class,"show"])->name("blog.show");
-
-//コメント関係
-Route::post("blog/{slug}",[BlogController::class,"store"])->name("blog.store");
-Route::get("admin/comment",[CommentController::class,"index"])->name("admin.comment.index")->middleware("auth:admin");
-Route::put("admin/comment/{comment}",[CommentController::class,"update"])->name("admin.comment.update")->middleware("auth:admin");
-Route::delete("admin/comment/{comment}",[CommentController::class,"destroy"])->name("admin.comment.destroy")->middleware("auth:admin");
 
 //コンタクト関係
 Route::get("contact",[ContactController::class,"index"])->name("contact.index");

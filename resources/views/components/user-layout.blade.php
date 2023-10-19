@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html amp lang="ja" data-theme="light">
+<html amp lang="ja" data-theme="cupcake">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,19 +19,19 @@
 <body class="bg-base-100">
     <div class="max-w-5xl m-auto bg-base-200">
         <header>
-            <div class="text-center p-5">
+            <div class="text-center py-5">
                 <h1 class="text-3xl"><a href="/">AYATAKA</a></h1>
             </div>
         </header>
-        <nav class="overflow-x-auto sticky top-0 left-0 right-0 bg-base-300 z-50">
-            <ul class="flex gap-5 whitespace-nowrap py-5 md:justify-center">
-                <li><a href="/">ホーム</a></li>
-                <li><a href="/blog">ブログ</a></li>
+        <nav class="overflow-x-auto sticky top-0 left-0 right-0 bg-base-300 z-50 px-5">
+            <ul class="flex gap-5 whitespace-nowrap py-2 md:justify-center">
                 <li><a href="/contact">お問い合わせ</a></li>
             </ul>
         </nav>
         <main class="min-h-screen">
-            {{$slot}}
+            <div class="max-w-3xl m-auto p-5">
+                {{$slot}}
+            </div>
         </main>
     </div>
 </body>
