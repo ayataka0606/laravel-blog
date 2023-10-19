@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html amp lang="ja" data-theme="cupcake">
+<html lang="ja" data-theme="cupcake">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,29 +8,25 @@
     <meta name="keywords" content={{$keywords}}>
     <title>{{$title}}</title>
     @vite('resources/css/app.css')
-    <link rel="canonical" href="{{env("APP_URL")}}">
-    <link rel="amphtml" href="{{env("APP_URL")}}">
     <link rel="alternate" type="application/atom+xml" href="{{env("APP_URL")}}/feed.atom" title="Atom">
-    <!-- AMP CSS ボイラープレートの指定 -->
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    <!-- head タグの最後の要素に AMP JS ライブラリを追加 -->
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
 </head>
-<body class="bg-base-100">
-    <div class="max-w-5xl m-auto bg-base-200">
+<body class="bg-base-200">
+    <div class="max-w-5xl m-auto bg-base-100">
         <header>
             <div class="text-center py-5">
                 <h1 class="text-3xl"><a href="/">AYATAKA</a></h1>
             </div>
         </header>
-        <nav class="overflow-x-auto sticky top-0 left-0 right-0 bg-base-300 z-50 px-5">
+        <nav class="overflow-x-auto sticky top-0 left-0 right-0 bg-base-100 z-50 px-5">
             <ul class="flex gap-5 whitespace-nowrap py-2 md:justify-center items-center">
                 <li><a href="{{route("about.index")}}">About</a></li>
                 <li><a href="{{route("blog.category")}}">Category</a></li>
                 <li>
                     <form method="GET">
-                        <input type="text" name="keyword"/>
-                        <button formaction="{{route("blog.search")}}" class="btn btn-primary">search</button>
+                        <input type="text" name="keyword" placeholder="サイト内検索"/>
+                        <button formaction="{{route("blog.search")}}" class="btn btn-primary">
+                            Search
+                        </button>
                     </form>
                 </li>
             </ul>
