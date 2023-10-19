@@ -1,7 +1,7 @@
 <x-user-layout>
-    <x-slot:description>AYATAKAの検索結果ページです。</x-slot:description>
-    <x-slot:keywords>AYATAKA,検索結果</x-slot:keywords>
-    <x-slot:title>AYATAKA | SEARCH</x-slot:title>
+    <x-slot:description>AYATAKAの検索結果「{{$keyword}}」ページです。</x-slot:description>
+    <x-slot:keywords>AYATAKA,検索結果,{{$keyword}}</x-slot:keywords>
+    <x-slot:title>AYATAKA | {{$keyword}}</x-slot:title>
     <!--記事一覧-->
     <article>
         <section>

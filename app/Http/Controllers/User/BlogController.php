@@ -31,6 +31,6 @@ class BlogController extends Controller
     {
         $keyword = $request->query("keyword");
         $posts = Post::where([["content","LIKE","%$keyword%"],["published","=","1"]])->get();
-        return view("user/blog/search",compact("posts"));
+        return view("user/blog/search",compact("posts","keyword"));
     }
 }
