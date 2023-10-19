@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\TagController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\PostController;
@@ -40,14 +39,6 @@ Route::post("admin/category/store",[CategoryController::class,"store"])->name("a
 Route::get("admin/category/{category}/edit",[CategoryController::class,"edit"])->name("admin.category.edit")->middleware("auth:admin");
 Route::put("admin/category/{category}",[CategoryController::class,"update"])->name("admin.category.update")->middleware("auth:admin");
 Route::delete("admin/category/{category}",[CategoryController::class,"destroy"])->name("admin.category.destroy")->middleware("auth:admin");
-
-//タグ関係
-Route::get("admin/tag",[TagController::class,"index"])->name("admin.tag.index")->middleware("auth:admin");
-Route::get("admin/tag/create",[TagController::class,"create"])->name("admin.tag.create")->middleware("auth:admin");
-Route::post("admin/tag/store",[TagController::class,"store"])->name("admin.tag.store")->middleware("auth:admin");
-Route::get("admin/tag/{tag}/edit",[TagController::class,"edit"])->name("admin.tag.edit")->middleware("auth:admin");
-Route::put("admin/tag/{tag}",[TagController::class,"update"])->name("admin.tag.update")->middleware("auth:admin");
-Route::delete("admin/tag/{tag}",[TagController::class,"destroy"])->name("admin.tag.destroy")->middleware("auth:admin");
 
 //投稿関係
 Route::get("admin/post",[PostController::class,"index"])->name("admin.post.index")->middleware("auth:admin");

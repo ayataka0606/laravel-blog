@@ -24,17 +24,7 @@
                 </option>
             @endforeach
         </select>
-        <label>タグ</label>
-        <ul>
-            @foreach ($tags as $tag)
-                <li>
-                    <input type="checkbox" name="tag_ids[]"
-                        value="{{$tag->id}}"
-                        @checked(is_array(old("tag_ids")) && in_array($tag->id,old("tag_ids")))>
-                    {{$tag->name}}
-                </li>
-            @endforeach
-        </ul>
+        <label>ステータス</label>
         <select name="published">
             <option value="0" @selected("0" == old("published"))>下書き</option>
             <option value="1" @selected("1" == old("published"))>公開</option>

@@ -29,14 +29,7 @@
                 </option>
             @endforeach
         </select>
-        <label>タグ</label>
-        @foreach ($tags as $tag)
-        <div>
-            <input type="checkbox" name="tag_ids[]" value="{{$tag->id}}" @checked(in_array($tag->id,old("tag_ids",$tagIds))) />
-            {{$tag->name}}
-        </div>
-        @endforeach
-        <label>カテゴリ</label>
+        <label>ステータス</label>
         <select name="published">
             <option value="0" @selected("0" == old("published",$post->published))>下書き</option>
             <option value="1" @selected("1" == old("published",$post->published))>公開</option>
