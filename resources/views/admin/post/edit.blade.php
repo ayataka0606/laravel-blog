@@ -1,4 +1,6 @@
 <x-admin-layout>
+    <!--セクションタイトル-->
+    <x-section-title>投稿編集</x-section-title>
     <!--エラーメッセージ-->
     <x-message/>
     <!--投稿編集フォーム-->

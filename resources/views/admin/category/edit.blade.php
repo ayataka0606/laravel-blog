@@ -3,6 +3,7 @@
     <x-section-title>カテゴリ編集</x-section-title>
     <!--エラーメッセージ-->
     <x-message/>
+    <!--カテゴリ編集フォーム-->
     <form method="POST" class="flex flex-col gap-2 px-2">
         @csrf
         @method("PUT")

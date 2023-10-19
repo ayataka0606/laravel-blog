@@ -9,12 +9,12 @@
 </head>
 <body>
     <header>
-        <div class="text-center text-3xl">
-            <a href="/admin/post">AYATAKA</a>
+        <div class="text-center p-5">
+            <h1 class="text-3xl"><a href="/admin/post">AYATAKA</a></h1>
         </div>
     </header>
-    <nav>
-        <ul class="flex flex-row gap-2 justify-center">
+    <nav class="overflow-x-auto sticky top-0 left-0 right-0 bg-base-300 z-50">
+        <ul class="flex gap-5 whitespace-nowrap py-5 md:justify-center">
             <li><a href="/admin/post">ホーム</a></li>
             <li><a href="/admin/post">投稿一覧</a></li>
             <li><a href="/admin/category">カテゴリ一覧</a></li>
