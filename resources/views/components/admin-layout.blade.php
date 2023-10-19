@@ -15,7 +15,6 @@
     </header>
     <nav class="overflow-x-auto sticky top-0 left-0 right-0 bg-base-300 z-50">
         <ul class="flex gap-5 whitespace-nowrap py-5 md:justify-center">
-            <li><a href="/admin/post">ホーム</a></li>
             <li><a href="/admin/post">投稿一覧</a></li>
             <li><a href="/admin/category">カテゴリ一覧</a></li>
             <li>

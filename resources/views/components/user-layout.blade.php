@@ -25,7 +25,8 @@
         </header>
         <nav class="overflow-x-auto sticky top-0 left-0 right-0 bg-base-300 z-50 px-5">
             <ul class="flex gap-5 whitespace-nowrap py-2 md:justify-center">
-                <li><a href="#">test</a></li>
+                <li><a href="{{route("about.index")}}">About</a></li>
+                <li><a href="{{route("blog.category")}}">Category</a></li>
             </ul>
         </nav>
         <main class="min-h-screen">

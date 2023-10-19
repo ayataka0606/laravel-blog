@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\User\BlogController;
 use App\Http\Controllers\Admin\SitemapController;
 use App\Http\Controllers\Admin\FeedController;
+use App\Http\Controllers\User\AboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,5 +50,9 @@ Route::put("admin/post/{post}",[PostController::class,"update"])->name("admin.po
 Route::delete("admin/post/{post}",[PostController::class,"destroy"])->name("admin.post.destroy")->middleware("auth:admin");
 Route::get("",[BlogController::class,"index"])->name("blog.index");
 Route::get("blog/{slug}",[BlogController::class,"show"])->name("blog.show");
+Route::get("category",[BlogController::class,"category"])->name("blog.category");
+
+//アバウト関係
+Route::get("about",[AboutController::class,"index"])->name("about.index");
 
 ?>
