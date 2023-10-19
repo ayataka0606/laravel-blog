@@ -51,6 +51,7 @@ Route::delete("admin/post/{post}",[PostController::class,"destroy"])->name("admi
 Route::get("",[BlogController::class,"index"])->name("blog.index");
 Route::get("blog/{slug}",[BlogController::class,"show"])->name("blog.show");
 Route::get("category",[BlogController::class,"category"])->name("blog.category");
+Route::get("search",[BlogController::class,"search"])->name("blog.search");
 
 //アバウト関係
 Route::get("about",[AboutController::class,"index"])->name("about.index");

@@ -24,9 +24,15 @@
             </div>
         </header>
         <nav class="overflow-x-auto sticky top-0 left-0 right-0 bg-base-300 z-50 px-5">
-            <ul class="flex gap-5 whitespace-nowrap py-2 md:justify-center">
+            <ul class="flex gap-5 whitespace-nowrap py-2 md:justify-center items-center">
                 <li><a href="{{route("about.index")}}">About</a></li>
                 <li><a href="{{route("blog.category")}}">Category</a></li>
+                <li>
+                    <form method="GET">
+                        <input type="text" name="keyword"/>
+                        <button formaction="{{route("blog.search")}}" class="btn btn-primary">search</button>
+                    </form>
+                </li>
             </ul>
         </nav>
         <main class="min-h-screen">
