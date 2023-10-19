@@ -1,13 +1,11 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminContactController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\TagController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\User\BlogController;
-use App\Http\Controllers\User\ContactController;
 use App\Http\Controllers\Admin\SitemapController;
 use App\Http\Controllers\Admin\FeedController;
 
@@ -60,13 +58,5 @@ Route::put("admin/post/{post}",[PostController::class,"update"])->name("admin.po
 Route::delete("admin/post/{post}",[PostController::class,"destroy"])->name("admin.post.destroy")->middleware("auth:admin");
 Route::get("",[BlogController::class,"index"])->name("blog.index");
 Route::get("blog/{slug}",[BlogController::class,"show"])->name("blog.show");
-
-//コンタクト関係
-Route::get("contact",[ContactController::class,"index"])->name("contact.index");
-Route::post("contact/confirm",[ContactController::class,"confirm"])->name("contact.confirm");
-Route::post("contact/thanks",[ContactController::class,"thanks"])->name("contact.thanks");
-Route::get("admin/contact",[AdminContactController::class,"index"])->name("admin.contact.index")->middleware("auth:admin");
-Route::get("admin/contact/{contact}",[AdminContactController::class,"show"])->name("admin.contact.show")->middleware("auth:admin");
-Route::delete("admin/contact/{contact}",[AdminContactController::class,"destroy"])->name("admin.contact.destroy")->middleware("auth:admin");
 
 ?>

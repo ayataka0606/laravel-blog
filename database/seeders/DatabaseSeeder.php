@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder
             PostsTableSeeder::class,
             PostTagTableSeeder::class,
             AdminsTableSeeder::class,
-            ContactsTableSeeder::class,
         ]);
     }
 }

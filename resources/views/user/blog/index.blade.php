@@ -2,6 +2,7 @@
     <x-slot:description>AYATAKAのブログ一覧ページです。</x-slot:description>
     <x-slot:keywords>AYATAKA,ブログ</x-slot:keywords>
     <x-slot:title>AYATAKA | BLOG</x-slot:title>
+    <!--記事一覧-->
     <article>
         <section>
             @foreach ($posts as $post)

@@ -7,7 +7,9 @@
     <!--記事-->
     <article class="prose">
         <h1>{{$post->title}}</h1>
-        <p><time>{{$post->updated_at->format("Y/m/d")}}</time></p>
-        {{$post->content}}
+        <time>{{$post->updated_at->format("Y/m/d")}}</time>
+        <div>
+            {{$post->content}}
+        </div>
     </article>
 </x-user-layout>
