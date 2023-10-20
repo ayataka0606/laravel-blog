@@ -20,7 +20,7 @@ class ImageController extends Controller
     }
     public function upload(Request $request): RedirectResponse
     {
-        if(!isNull($request->id)){
+        if(!empty($request->file("image"))){
             $dir = "blog";
             $file_name = $request->file("image")->getClientOriginalName();
             $request->file("image")->storeAs("public/".$dir,$file_name);
@@ -32,6 +32,6 @@ class ImageController extends Controller
                 ->with("message",$image->name."をアップロードしました。");
         }
         return redirect(route("admin.image.index"))
-            ->with("message","ファイルを指定してください。");
+            ->with("message","ファイルを選択してください。");
     }
 }
