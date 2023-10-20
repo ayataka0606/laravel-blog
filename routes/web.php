@@ -57,6 +57,7 @@ Route::get("search",[BlogController::class,"search"])->name("blog.search");
 //画像関係
 Route::get("admin/image",[ImageController::class,"index"])->name("admin.image.index")->middleware("auth:admin");
 Route::post("admin/image",[ImageController::class,"upload"])->name("admin.image.upload")->middleware("auth:admin");
+Route::delete("admin/image/{image}",[ImageController::class,"destroy"])->name("admin.image.destroy")->middleware("auth:admin");
 
 //アバウト関係
 Route::get("about",[AboutController::class,"index"])->name("about.index");

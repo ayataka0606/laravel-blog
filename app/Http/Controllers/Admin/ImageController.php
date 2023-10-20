@@ -7,6 +7,7 @@ use App\Models\Image;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
@@ -30,5 +31,12 @@ class ImageController extends Controller
         }
         return redirect(route("admin.image.index"))
             ->with("message","ファイルを選択してください。");
+    }
+    public function destroy(Image $image): RedirectResponse
+    {
+        $image->delete();
+        Storage::disk("public")->delete("blog/".$image->name);
+        return redirect(route("admin.image.index"))
+            ->with("message",$image->name."を削除しました。");
     }
 }

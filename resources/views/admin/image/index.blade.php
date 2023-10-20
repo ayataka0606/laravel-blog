@@ -8,7 +8,16 @@
     </form>
     <div class="flex gap-5 p-5 justify-center flex-wrap">
         @foreach ($images as $image)
-            <a href="/storage/blog/{{$image->name}}"><img src="{{asset($image->path)}}" width="200" height="100"/></a>
+            <div class="flex flex-col items-center gap-2">
+                <a href="/storage/blog/{{$image->name}}">
+                    <img src="{{asset($image->path)}}" width="200" height="100"/>
+                </a>
+                <form method="POST">
+                    @csrf
+                    @method("DELETE")
+                    <button formaction="{{route("admin.image.destroy",$image)}}" class="btn btn-secondary">削除</button>
+                </form>
+            </div>
         @endforeach
     </div>
 </x-admin-layout>
