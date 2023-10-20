@@ -7,6 +7,7 @@ use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
+use League\CommonMark\GithubFlavoredMarkdownConverter;
 
 class BlogController extends Controller
 {
@@ -19,7 +20,9 @@ class BlogController extends Controller
     {
         $slug = $request->slug;
         $post = Post::where([["slug","=",$slug],["published","=","1"]])->first();
-        return view("user/blog/show",compact("post"));
+        $converter = new GithubFlavoredMarkdownConverter();
+        $htmlContent = $converter->convert($post->content);
+        return view("user/blog/show",compact("post","htmlContent"));
     }
     public function category(): View
     {

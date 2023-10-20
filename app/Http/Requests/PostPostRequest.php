@@ -28,8 +28,6 @@ class PostPostRequest extends FormRequest
             "description"=>"required|unique:posts|max:100",
             "content"=>"required|unique:posts",
             "category_id"=>"required|exists:categories,id",
-            "tag_ids"=>"required|array",
-            "tag_ids.*"=>"required|exists:tags,id",
             "published"=>"required",
         ];
     }

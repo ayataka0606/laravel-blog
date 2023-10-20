@@ -9,7 +9,7 @@
         <h1>{{$post->title}}</h1>
         <time>{{$post->updated_at->format("Y/m/d")}}</time>
         <div>
-            {{$post->content}}
+            {!!$htmlContent!!}
         </div>
     </article>
 </x-user-layout>

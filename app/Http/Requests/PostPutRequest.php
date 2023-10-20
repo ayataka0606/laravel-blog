@@ -28,8 +28,6 @@ class PostPutRequest extends FormRequest
             "description"=>"required|max:100",
             "content"=>"required",
             "category_id"=>"required|exists:categories,id",
-            "tag_ids"=>"required|array",
-            "tag_ids.*"=>"required|exists:tags,id",
             "published"=>"required",
         ];
     }

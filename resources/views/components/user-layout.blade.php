@@ -21,16 +21,14 @@
             <ul class="flex gap-5 whitespace-nowrap py-2 md:justify-center items-center">
                 <li><a href="{{route("about.index")}}">About</a></li>
                 <li><a href="{{route("blog.category")}}">Category</a></li>
-                <li>
-                    <form method="GET">
-                        <input type="text" name="keyword" placeholder="サイト内検索"/>
-                        <button formaction="{{route("blog.search")}}" class="btn btn-primary">
-                            Search
-                        </button>
-                    </form>
-                </li>
             </ul>
         </nav>
+        <form method="GET" class="text-center">
+            <input type="text" name="keyword" placeholder="サイト内検索"/>
+            <button formaction="{{route("blog.search")}}" class="btn btn-primary">
+                Search
+            </button>
+        </form>
         <main class="min-h-screen">
             <div class="max-w-3xl m-auto p-5">
                 {{$slot}}
