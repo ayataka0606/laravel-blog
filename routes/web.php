@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\User\BlogController;
 use App\Http\Controllers\Admin\SitemapController;
 use App\Http\Controllers\Admin\FeedController;
+use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\User\AboutController;
 
 /*
@@ -52,6 +53,10 @@ Route::get("",[BlogController::class,"index"])->name("blog.index");
 Route::get("blog/{slug}",[BlogController::class,"show"])->name("blog.show");
 Route::get("category",[BlogController::class,"category"])->name("blog.category");
 Route::get("search",[BlogController::class,"search"])->name("blog.search");
+
+//画像関係
+Route::get("admin/image",[ImageController::class,"index"])->name("admin.image.index");
+Route::post("admin/image",[ImageController::class,"upload"])->name("admin.image.upload");
 
 //アバウト関係
 Route::get("about",[AboutController::class,"index"])->name("about.index");

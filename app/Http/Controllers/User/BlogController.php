@@ -19,7 +19,7 @@ class BlogController extends Controller
     public function show(Request $request): View
     {
         $slug = $request->slug;
-        $post = Post::where([["slug","=",$slug],["published","=","1"]])->first();
+        $post = Post::where([["slug","=",$slug],["published","=","1"]])->with("image")->first();
         $converter = new GithubFlavoredMarkdownConverter();
         $htmlContent = $converter->convert($post->content);
         return view("user/blog/show",compact("post","htmlContent"));

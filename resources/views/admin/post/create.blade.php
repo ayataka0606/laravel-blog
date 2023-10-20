@@ -24,6 +24,14 @@
                 </option>
             @endforeach
         </select>
+        <label>サムネイル</label>
+        <select name="image_id">
+            @foreach ($images as $image)
+                <option value="{{$image->id}}" @selected($image->id == old("image_id"))>
+                    {{$image->name}}
+                </option>
+            @endforeach
+        </select>
         <label>ステータス</label>
         <select name="published">
             <option value="0" @selected("0" == old("published"))>下書き</option>

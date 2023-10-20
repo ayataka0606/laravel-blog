@@ -17,6 +17,7 @@
         <ul class="flex gap-5 whitespace-nowrap py-5 md:justify-center">
             <li><a href="/admin/post">投稿一覧</a></li>
             <li><a href="/admin/category">カテゴリ一覧</a></li>
+            <li><a href="/admin/image">画像一覧</a></li>
             <li>
                 <form method="POST">
                     @csrf

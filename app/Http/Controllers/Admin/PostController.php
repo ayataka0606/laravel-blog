@@ -8,6 +8,7 @@ use App\Http\Requests\PostPutRequest;
 use Illuminate\View\View;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Image;
 use Illuminate\Http\RedirectResponse;
 
 class PostController extends Controller
@@ -20,7 +21,8 @@ class PostController extends Controller
     public function create(): View
     {
         $categories = Category::all();
-        return view("admin/post/create",compact("categories"));
+        $images = Image::all();
+        return view("admin/post/create",compact("categories","images"));
     }
     public function store(PostPostRequest $request): RedirectResponse
     {
@@ -31,6 +33,7 @@ class PostController extends Controller
         $post->description = $request->description;
         $post->content = $request->content;
         $post->category_id = $request->category_id;
+        $post->image_id = $request->image_id;
         $post->published = $request->published;
         $post->save();
         return redirect(route("admin.post.index"))
@@ -39,7 +42,8 @@ class PostController extends Controller
     public function edit(Post $post): View
     {
         $categories = Category::all();
-        return view("admin/post/edit",compact("post","categories"));
+        $images = Image::all();
+        return view("admin/post/edit",compact("post","categories","images"));
     }
     public function update(PostPutRequest $request, Post $post): RedirectResponse
     {
@@ -49,6 +53,7 @@ class PostController extends Controller
         $post->description = $request->description;
         $post->content = $request->content;
         $post->category_id = $request->category_id;
+        $post->image_id = $request->image_id;
         $post->published = $request->published;
         $post->update();
         return redirect(route("admin.post.index"))

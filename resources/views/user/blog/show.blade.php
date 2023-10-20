@@ -6,8 +6,13 @@
     <x-message/>
     <!--記事-->
     <article class="prose">
-        <h1>{{$post->title}}</h1>
-        <time>{{$post->updated_at->format("Y/m/d")}}</time>
+        <div class="flex items-center justify-between">
+            <h1>{{$post->title}}</h1>
+            <time><span>公開日: </span>{{$post->updated_at->format("Y/m/d")}}</time>
+        </div>
+        @if ($post->image->name !="dummy.jpg")
+            <img class="m-auto" src="{{asset($post->image->path)}}" width="1000" height="200"/>
+        @endif
         <div>
             {!!$htmlContent!!}
         </div>

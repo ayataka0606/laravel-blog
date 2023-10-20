@@ -2,7 +2,7 @@
     <x-slot:description>AYATAKAのカテゴリ別一覧ページです。</x-slot:description>
     <x-slot:keywords>AYATAKA,ブログ,カテゴリ</x-slot:keywords>
     <x-slot:title>AYATAKA | CATEGORY</x-slot:title>
-    <nav class="overflow-x-auto p-2">
+    <nav class="overflow-x-auto p-2 my-5 border-y text-lg">
         <ul class="flex flex-row gap-5">
             @foreach ($categories as $category)
                 <li><a href="#{{$category->name}}">{{$category->name}}</a></li>
