@@ -1,14 +1,49 @@
+<?php
+    $themes = array(
+        "light",
+        "dark",
+        "cupcake",
+        "bumblebee",
+        "emerald",
+        "corporate",
+        "synthwave",
+        "retro",
+        "cyberpunk",
+        "valentine",
+        "halloween",
+        "garden",
+        "forest",
+        "aqua",
+        "lofi",
+        "pastel",
+        "fantasy",
+        "wireframe",
+        "black",
+        "luxury",
+        "dracula",
+        "cmyk",
+        "autumn",
+        "business",
+        "acid",
+        "lemonade",
+        "night",
+        "coffee",
+        "winter",
+    );
+    $theme = array_rand($themes,1);
+?>
 <!DOCTYPE html>
-<html lang="ja" data-theme="cupcake">
+<html lang="ja" data-theme="{{$themes[$theme]}}">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content={{$description}}>
     <meta name="keywords" content={{$keywords}}>
     <title>{{$title}}</title>
-    @vite('resources/css/app.css')
     <link rel="alternate" type="application/atom+xml" href="{{env("APP_URL")}}/feed.atom" title="Atom">
+    @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
 <body class="bg-base-200">
     <div class="max-w-5xl m-auto bg-base-100">

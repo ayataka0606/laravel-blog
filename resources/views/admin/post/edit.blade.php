@@ -17,10 +17,17 @@
         <textarea name="description" cols="30" rows="10">
             {{old("description",$post->description)}}
         </textarea>
-        <label>内容</label>
-        <textarea name="content" cols="30" rows="10">
-            {{old("content",$post->content)}}
-        </textarea>
+        <div class="flex w-full gap-5">
+            <div class="w-1/2 flex flex-col">
+                <label>内容</label>
+                <textarea id="editor" name="content" cols="100" rows="30">
+                    {{old("content",$post->content)}}
+                </textarea>
+            </div>
+            <article class="prose w-1/2">
+                <div id="preview"></div>
+            </article>
+        </div>
         <label>カテゴリ</label>
         <select name="category_id">
             @foreach ($categories as $category)
