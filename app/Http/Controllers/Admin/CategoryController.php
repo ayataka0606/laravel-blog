@@ -13,7 +13,7 @@ class CategoryController extends Controller
 {
     public function index(): View
     {
-        $categories = Category::all();
+        $categories = Category::orderBy("updated_at","DESC")->all();
         return view("admin/category/index", compact("categories"));
     }
     public function create(): View
