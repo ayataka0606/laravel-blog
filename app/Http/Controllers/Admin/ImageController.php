@@ -8,6 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Post;
 
 class ImageController extends Controller
 {
@@ -34,6 +35,13 @@ class ImageController extends Controller
     }
     public function destroy(Image $image): RedirectResponse
     {
+        $posts = Post::all();
+        foreach($posts as $post){
+            if($post->image_id == $image->id){
+                return redirect(route("admin.image.index"))
+                ->with("message","POST ID".$post->id."で使われているため削除できません。");
+            }
+        }
         $image->delete();
         Storage::disk("public")->delete("blog/".$image->name);
         return redirect(route("admin.image.index"))

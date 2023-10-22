@@ -8,6 +8,7 @@ use App\Models\Category;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\CategoryPostRequest;
 use App\Http\Requests\CategoryPutRequest;
+use App\Models\Post;
 
 class CategoryController extends Controller
 {
@@ -48,6 +49,13 @@ class CategoryController extends Controller
     }
     public function destroy(Category $category): RedirectResponse
     {
+        $posts = Post::all();
+        foreach($posts as $post){
+            if($post->category_id == $category->id){
+                return redirect(route("admin.category.index"))
+                ->with("message","POST ID".$post->id."で使われているため削除できません。");
+            }
+        }
         $category->delete();
         return redirect(route("admin.category.index"))
             ->with("message",$category->name."を削除しました。");
