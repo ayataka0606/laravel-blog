@@ -13,7 +13,7 @@ class ImageController extends Controller
 {
     public function index(): View
     {
-        $images = Image::orderBy("updated_at","DESC")->all();
+        $images = Image::orderBy("updated_at","DESC")->get();
         return view("admin/image/index",compact("images"));
     }
     public function upload(Request $request): RedirectResponse

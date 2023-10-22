@@ -15,12 +15,12 @@ class PostController extends Controller
 {
     public function index(): View
     {
-        $posts = Post::orderBy("updated_at","DESC")->all();
+        $posts = Post::orderBy("updated_at","DESC")->get();
         return view("admin/post/index",compact("posts"));
     }
     public function create(): View
     {
-        $categories = Category::orderBy("updated_at","DESC")->all();
+        $categories = Category::orderBy("updated_at","DESC")->get();
         $images = Image::all();
         return view("admin/post/create",compact("categories","images"));
     }
@@ -41,7 +41,7 @@ class PostController extends Controller
     }
     public function edit(Post $post): View
     {
-        $categories = Category::orderBy("updated_at","DESC")->all();
+        $categories = Category::orderBy("updated_at","DESC")->get();
         $images = Image::all();
         return view("admin/post/edit",compact("post","categories","images"));
     }
