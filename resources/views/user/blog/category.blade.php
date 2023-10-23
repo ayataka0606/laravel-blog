@@ -15,7 +15,7 @@
             @foreach ($posts as $post)
                 @if ($post->category->id == $category->id)
                     <ul class="flex gap-5 py-5 text-lg">
-                        <li><time>{{$post->updated_at->format("Y/m/d")}} :</time></li>
+                        <li><time>{{$post->updated_at->format("Y/m/d")}}:</time></li>
                         <li><a href="/blog/{{$post->slug}}" class="link link-hover">{{$post->title}}</a></li>
                     </ul> 
                 @endif

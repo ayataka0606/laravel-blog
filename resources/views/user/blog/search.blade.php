@@ -7,7 +7,7 @@
         <section>
             @foreach ($posts as $post)
                 <ul class="flex gap-5 py-3 text-lg">
-                    <li><time>{{$post->updated_at->format("Y/m/d")}} :</time></li>
+                    <li><time>{{$post->updated_at->format("Y/m/d")}}:</time></li>
                     <li><a href="/blog/{{$post->slug}}" class="link link-hover">{{$post->title}}</a></li>
                 </ul>
             @endforeach
