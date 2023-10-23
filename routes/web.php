@@ -8,6 +8,7 @@ use App\Http\Controllers\User\BlogController;
 use App\Http\Controllers\Admin\SitemapController;
 use App\Http\Controllers\Admin\FeedController;
 use App\Http\Controllers\Admin\ImageController;
+use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\User\AboutController;
 
 /*
@@ -27,7 +28,6 @@ Route::get("sitemap/posts.xml",[SitemapController::class,"posts"])->name("sitema
 
 //フィード関係
 Route::get("feed.atom",[FeedController::class,"index"])->name("feed.index");
-
 
 //ログイン関係
 Route::get("admin/login",[AuthenticatedSessionController::class,"create"])->name("admin.login.create")->middleware("guest:admin");
@@ -58,6 +58,16 @@ Route::get("search",[BlogController::class,"search"])->name("blog.search");
 Route::get("admin/image",[ImageController::class,"index"])->name("admin.image.index")->middleware("auth:admin");
 Route::post("admin/image",[ImageController::class,"upload"])->name("admin.image.upload")->middleware("auth:admin");
 Route::delete("admin/image/{image}",[ImageController::class,"destroy"])->name("admin.image.destroy")->middleware("auth:admin");
+
+//プロフィール関係
+Route::get("admin/profile/edit",[ProfileController::class,"edit"])->name("admin.profile.edit")->middleware("auth:admin");
+Route::post("admin/profile/skill",[ProfileController::class,"skill_store"])->name("admin.profile.skill_store")->middleware("auth:admin");
+Route::put("admin/profile/skill/{skill}",[ProfileController::class,"skill_update"])->name("admin.profile.skill_update")->middleware("auth:admin");
+Route::delete("admin/profile/skill/{skill}",[ProfileController::class,"skill_destroy"])->name("admin.profile.skill_destroy")->middleware("auth:admin");
+Route::post("admin/profile/qualification",[ProfileController::class,"qualification_store"])->name("admin.profile.qualification_store")->middleware("auth:admin");
+Route::put("admin/profile/qualification/{qualification}",[ProfileController::class,"qualification_update"])->name("admin.profile.qualification_update")->middleware("auth:admin");
+Route::delete("admin/profile/qualification/{qualification}",[ProfileController::class,"qualification_destroy"])->name("admin.profile.qualification_destroy")->middleware("auth:admin");
+Route::put("admin/profile/profile/{admin}",[ProfileController::class,"profile_update"])->name("admin.profile.profile_update")->middleware("auth:admin");
 
 //アバウト関係
 Route::get("about",[AboutController::class,"index"])->name("about.index");

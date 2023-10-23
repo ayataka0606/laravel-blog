@@ -18,6 +18,7 @@ class AdminsTableSeeder extends Seeder
             "name" => config("app.admin_name"),
             "email" => config("app.admin_email"),
             "birth" => config("app.admin_birth"),
+            "profile" => config("app.admin_profile"),
             "login_id" => config("app.admin_login_id"),
             "password" => Hash::make(config("app.admin_login_password")),
         ]);

@@ -195,7 +195,7 @@ return [
     "admin_name" => env("ADMIN_NAME"),
     "admin_email" => env("ADMIN_EMAIL"),
     "admin_birth" => env("ADMIN_BIRTH"),
+    "admin_profile" => env("ADMIN_PROFILE"),
     "admin_login_id" => env("ADMIN_LOGIN_ID"),
     "admin_login_password" => env("ADMIN_LOGIN_PASSWORD"),
-
 ];

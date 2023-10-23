@@ -17,9 +17,7 @@
         <div class="flex w-full gap-5">
             <div class="w-1/2 flex flex-col">
                 <label>内容</label>
-                <textarea id="editor" name="content" cols="100" rows="30">
-                    {{old("content")}}
-                </textarea>
+                <textarea id="editor" name="content" cols="100" rows="30">{{old("content")}}</textarea>
             </div>
             <article class="prose w-1/2">
                 <div id="preview"></div>

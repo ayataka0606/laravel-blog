@@ -14,15 +14,11 @@
         <label>キーワード</label>
         <input type="text" name="keywords" value="{{old("keywords",$post->keywords)}}"/>
         <label>概要</label>
-        <textarea name="description" cols="30" rows="10">
-            {{old("description",$post->description)}}
-        </textarea>
+        <textarea name="description" cols="30" rows="10">{{old("description",$post->description)}}</textarea>
         <div class="flex w-full gap-5">
             <div class="w-1/2 flex flex-col">
                 <label>内容</label>
-                <textarea id="editor" name="content" cols="100" rows="30">
-                    {{old("content",$post->content)}}
-                </textarea>
+                <textarea id="editor" name="content" cols="100" rows="30">{{old("content",$post->content)}}</textarea>
             </div>
             <article class="prose w-1/2">
                 <div id="preview"></div>

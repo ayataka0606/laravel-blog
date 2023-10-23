@@ -18,6 +18,7 @@
             <li><a href="/admin/post">投稿一覧</a></li>
             <li><a href="/admin/category">カテゴリ一覧</a></li>
             <li><a href="/admin/image">画像一覧</a></li>
+            <li><a href="/admin/profile/edit">プロフィール編集</a></li>
             <li>
                 <form method="POST">
                     @csrf

@@ -20,6 +20,7 @@ class AdminFactory extends Factory
             "name"=>fake()->name(),
             "email"=>fake()->safeEmail(),
             "birth"=>fake()->date(),
+            "profile"=>fake()->realText(),
             "login_id"=>fake()->word(),
             "password"=>fake()->word(),
         ];

@@ -14,9 +14,7 @@
         <label>キーワード</label>
         <input type="text" name="keywords" value="{{old("keywords",$category->keywords)}}">
         <label>概要</label>
-        <textarea name="description" cols="30" rows="10">
-            {{old("description",$category->description)}}
-        </textarea>
+        <textarea name="description" cols="30" rows="10">{{old("description",$category->description)}}</textarea>
         <div class="text-center">
             <button formaction="{{route("admin.category.update",$category)}}" class="btn btn-primary">変更</button>
         </div>
