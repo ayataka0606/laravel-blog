@@ -43,7 +43,7 @@
     <meta name="keywords" content={{$keywords}}>
     <title>{{$title}}</title>
     <link rel="alternate" type="application/atom+xml" href="{{env("APP_URL")}}/feed.atom" title="Atom">
-    @vite(['resources/css/app.css','resources/js/app.js'])
+    @vite(['resources/css/app.css'])
 </head>
 <body class="bg-base-200">
     <div class="max-w-5xl m-auto bg-base-100">
