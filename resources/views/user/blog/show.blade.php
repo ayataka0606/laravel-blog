@@ -5,7 +5,7 @@
     <!--インフォメーション-->
     <x-message/>
     <!--記事-->
-    <article class="prose-sm lg:prose-lg m-auto">
+    <article class="prose m-auto">
         <div class="text-center">
             <h1>{{$post->title}}</h1>
         </div>
