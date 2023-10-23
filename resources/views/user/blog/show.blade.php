@@ -5,9 +5,11 @@
     <!--インフォメーション-->
     <x-message/>
     <!--記事-->
-    <article class="prose">
-        <div class="flex items-center justify-between">
+    <article class="prose-sm lg:prose-lg m-auto">
+        <div class="text-center">
             <h1>{{$post->title}}</h1>
+        </div>
+        <div class="text-right">
             <time><span>公開日: </span>{{$post->updated_at->format("Y/m/d")}}</time>
         </div>
         @if ($post->image->name !="dummy.jpg")
