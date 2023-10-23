@@ -12,7 +12,7 @@ class SitemapController extends Controller
         return response()->view("sitemap/index")->header("Content-Type","text/xml");
     }
     public function posts() {
-        $posts = Post::orderBy("updated_at","DESC")->all();
+        $posts = Post::orderBy("updated_at","DESC")->get();
         return response()->view("sitemap/posts",compact("posts"))->header("Content-Type","text/xml");
     }
 }
