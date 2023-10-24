@@ -43,6 +43,8 @@
     <meta name="keywords" content={{$keywords}}>
     <title>{{$title}}</title>
     <link rel="alternate" type="application/atom+xml" href="{{env("APP_URL")}}/feed.atom" title="Atom">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8558173050909097"
+     crossorigin="anonymous"></script>
     @vite(['resources/css/app.css'])
 </head>
 <body class="bg-base-200">
