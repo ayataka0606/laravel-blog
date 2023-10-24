@@ -15,13 +15,20 @@
         <x-section-title>保有資格</x-section-title>
         <article class="prose m-auto lg:text-lg">
             <table>
-                @foreach ($qualifications as $qualification)
-                    <tr>
-                        <td>{{$qualification->name}}</td>
-                        <td>{{date("Y年m月",strtotime($qualification->status_date))}}</td>
-                        <td>{{$qualification->status}}</td>
-                    </tr>
-                @endforeach
+                <thead>
+                    <th>資格名</th>
+                    <th>年月</th>
+                    <th>結果</th>
+                </thead>
+                <tbody>
+                    @foreach ($qualifications as $qualification)
+                        <tr>
+                            <td>{{$qualification->name}}</td>
+                            <td>{{date("Y年m月",strtotime($qualification->status_date))}}</td>
+                            <td>{{$qualification->status}}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
             </table>
         </article>
     </section>
@@ -29,16 +36,22 @@
         <x-section-title>スキル</x-section-title>
         <article class="prose m-auto">
             <table>
-                @foreach ($skills as $skill)
-                    <tr>
-                        <td>{{$skill->name}}</td>
-                        <td>
-                            @for($i=1;$i<=$skill->level;$i++)
-                                <span class="text-primary">★</span>
-                            @endfor
-                        </td>
-                    </tr>
-                @endforeach
+                <thead>
+                    <th>スキル名</th>
+                    <th>レベル</th>
+                </thead>
+                <tbody>
+                    @foreach ($skills as $skill)
+                        <tr>
+                            <td>{{$skill->name}}</td>
+                            <td>
+                                @for($i=1;$i<=$skill->level;$i++)
+                                    <span class="text-primary">★</span>
+                                @endfor
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
             </table>
             <ul class="lg:text-lg">
                 

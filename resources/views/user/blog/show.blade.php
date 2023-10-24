@@ -13,7 +13,7 @@
             <time><span>公開日: </span>{{$post->updated_at->format("Y/m/d")}}</time>
         </div>
         @if ($post->image->name !="dummy.jpg")
-            <img class="m-auto" alt="{{$post->image->name}}" src="{{asset($post->image->path)}}" width="1000" height="200"/>
+            <img class="m-auto w-56" alt="{{$post->image->name}}" src="{{asset($post->image->path)}}" width="1000" height="200"/>
         @endif
         <div>
             {!!$htmlContent!!}
