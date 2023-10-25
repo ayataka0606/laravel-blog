@@ -23,9 +23,9 @@ class BlogController extends Controller
     {
         $slug = $request->slug;
         $post = Post::where([["slug","=",$slug],["published","=","1"]])->with("image")->first();
-        if(isEmpty($post)){
+        if(empty($post)){
             abort(404);
-        }
+        };
         Log::info("ブログが参照されました。ID=".$post->id);
         $converter = new GithubFlavoredMarkdownConverter();
         $htmlContent = $converter->convert($post->content);
