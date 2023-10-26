@@ -10,8 +10,6 @@ use App\Models\Category;
 use League\CommonMark\GithubFlavoredMarkdownConverter;
 use Illuminate\Support\Facades\Log;
 
-use function PHPUnit\Framework\isEmpty;
-
 class BlogController extends Controller
 {
     public function index(): View
@@ -34,7 +32,7 @@ class BlogController extends Controller
     public function category(): View
     {
         $categories = Category::all();
-        $posts = Post::with("category")->orderBy("category_id")->orderBy("updated_at")->where("published","=","1")->get();
+        $posts = Post::with("category")->orderBy("category_id")->orderBy("updated_at","DESC")->where("published","=","1")->get();
         return view("user/blog/category",compact("categories","posts"));
     }
     public function search(Request $request): View
