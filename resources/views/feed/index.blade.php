@@ -12,6 +12,7 @@
         <entry>
             <id>{{env("APP_URL")}}/blog/{{$post->slug}}</id>
             <title><![CDATA[{{$post->title}}]]></title>
+            <link rel="alternate" type="text/html" href="{{env("APP_URL")}}/blog/{{$post->slug}}">
             <updated>{{$post->updated_at->format(DateTime::ATOM)}}</updated>
             <summary><![CDATA[{{$post->description}}]]></summary>
         </entry>
