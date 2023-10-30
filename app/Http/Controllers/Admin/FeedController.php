@@ -9,7 +9,7 @@ use App\Models\Post;
 class FeedController extends Controller
 {
     public function index() {
-        $posts = Post::orderBy("updated_at","desc")->take(10)->get();
+        $posts = Post::where("published","=","1")->orderBy("updated_at","desc")->take(10)->get();
         return response()->view("feed/index",compact("posts"))->header("Content-Type","text/xml");
     }
 }
