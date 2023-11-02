@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
     $themes = array(
         "light",
@@ -32,7 +33,6 @@
     );
     $theme = array_rand($themes,1);
 ?>
-<!DOCTYPE html>
 <html lang="ja" data-theme="{{$themes[$theme]}}">
 <head>
     
